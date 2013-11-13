@@ -1,11 +1,7 @@
 <?php
-	include "Group.php";
-	include "Member.php";
-
-	class ProjGroup extends Group {
+	class Group {
 		private $name;
 		private $members = array();
-		private $projects = array();
 		private static $groups = array();
 		
 		// Constructor
@@ -16,9 +12,10 @@
 		}
 		
 		// addMember function
-		/public function addMember($member) {
+		public function addMember($member) {
 			$this->members[] = $member;
-			$member.addCourse($this->name);
+			$member.addGroup($this->name);
 		}
+		// 
 	}
 ?>

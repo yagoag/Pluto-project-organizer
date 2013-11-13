@@ -1,5 +1,5 @@
 <?php
-	class Projects {
+	class Project {
 		// Class Variables
 		private $name;
 		private $password;
@@ -11,6 +11,11 @@
 		public function __construct($name, $pass) {
 			$this->name = $name;
 			$this->password = $pass;
+		}
+
+		// Debugging functions
+		public function dbgNameAndPass() {
+			echo $this->name . "<br />" . $this->password;
 		}
 
 		// Add items

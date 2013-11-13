@@ -14,5 +14,9 @@
 		public function createGroup($name) {
 			
 		}
+		// addGroup function
+		public function addGroup($groupName) {
+			$this->groups[] = $groupName;
+		}
 	}
 ?>
