@@ -1,0 +1,189 @@
+/*******************************\
+*  Style.css file for Pluto		*
+*  Developed by:				*
+*  Yago Arroyo and				*
+*  Leonardo Lopes				*
+\*******************************/
+
+@font-face {
+	font-family: "Rockwell";
+	src: url(fonts/rockwell.ttf);
+}
+
+body {
+	background: url(images/bg.png) repeat;
+	text-align: center;
+	margin: auto;
+	padding: auto;
+	font-family: "Calibri Light", "Calibri", Arial, sans-serif;
+	font-size: 20px;
+}
+
+p {
+	margin: 3px 0;
+}
+
+a {
+	text-decoration: none;
+	color: #2770b7;
+}
+
+input {
+	border-style: none;
+}
+
+.title {
+	font-family: "Rockwell", "Tahoma MS", Verdana, Arial, sans-serif;
+	font-size: 54px;
+	text-align: center;
+}
+
+#login-container {
+	margin: 100px auto 0 auto;
+	width: 360px;
+}
+
+#login-form {
+	height: 200px;
+	background: url(images/login-bg.png) no-repeat;
+	padding: 35px 0 0 0;
+	margin: 20px 0 0 0;
+}
+
+#login-form input {
+	font-family: "Calibri Light", "Calibri", Arial, sans-serif;
+	font-size: 20px;
+}
+
+.textBox {
+	height: 39px;
+	width: 284px;
+	background: url(images/login-textbox.png) no-repeat;
+	padding: 0 10px;
+	margin: 0 0 10px 0;
+	color: #888;
+}
+
+.button {
+	height: 39px;
+	width: 154px;
+	background: url(images/login-button-bg.png) no-repeat;
+	border-style: none;
+	color: #FFF;
+	margin: 10px 0 0 0;
+}
+
+#header {
+	width: 900px;
+	margin: 0 auto;
+	padding: 20px 0 0 0;
+	text-align: left;
+	color: #1c1d1e;
+	font-family: "Rockwell", "Tahoma MS", Verdana, Arial, sans-serif;
+}
+
+#header .logo {
+	float: left;
+}
+
+#header .userinfo {
+	float: right;
+	margin: 15px 0 0 0;
+	text-align: right;
+}
+
+#header .userinfo .username {
+	font-size: 32px;
+}
+
+#header .userinfo .logout {
+	font-family: "Calibri Light", "Calibri", Arial, sans-serif;
+	font-size: 14px;
+}
+
+#header .info {
+	clear: both;
+	margin: 0 0 0 30px;
+	padding: 10px 0 10px 0;
+	font-size: 18px;
+}
+
+#chart-container {
+    width: 840px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#chart-container ul {
+	padding: 0 40px 5px 25px;
+	list-style: url(images/tick.png);
+}
+
+#chart-container li {
+	padding: 0 0 5px 0;
+	margin: 0 0 0 15px;
+}
+
+#todo, #doing, #done {
+	margin: 10px 0 0 0;
+    float: left;
+    width: 280px;    
+    min-height: 192px;
+}
+
+#todo {
+	background: url(images/postit-red.png) bottom left no-repeat, url(images/postit-red-bg.png) repeat-y;
+}
+
+#doing {
+	background: url(images/postit-yellow.png) bottom left no-repeat, url(images/postit-yellow-bg.png) repeat-y;
+}
+
+#done {
+	background: url(images/postit-green.png) bottom left no-repeat, url(images/postit-green-bg.png) repeat-y;
+}
+
+#chart-container .title {
+	font-family: "Rockwell", "Tahoma MS", Verdana, Arial, sans-serif;
+	font-size: 32px;
+	text-align: center;
+	background: url(images/postit-title.png);
+}
+
+#todo .title {
+	color: #941332;
+}
+
+#doing .title {
+	color: #d7cc24;
+}
+
+#done .title {
+	color: #29c200;
+}
+
+.clear {
+	clear: both;
+}
+
+.button-back {
+	width: 16px;
+	height: 16px;
+	background: url(images/button-back.png) no-repeat;
+}
+
+.button-delete {
+	width: 16px;
+	height: 16px;
+	background: url(images/button-delete.png) no-repeat;
+}
+
+.button-next {
+	width: 16px;
+	height: 16px;
+	background: url(images/button-next.png) no-repeat;
+}
+
+.disable {
+	background: 50%;
+}
