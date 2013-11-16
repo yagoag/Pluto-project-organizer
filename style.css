@@ -28,6 +28,10 @@ a {
 	color: #2770b7;
 }
 
+a:hover {
+	color: #4a6d8f;
+}
+
 input {
 	border-style: none;
 }
@@ -38,27 +42,45 @@ input {
 	text-align: center;
 }
 
+#message {
+	text-align: left;
+	border-radius: 3px;
+	background: rgba(130, 188, 243, 0.5);
+	border: 1px solid #999;
+	padding: 35px 20px;
+	margin: 20px 0 0 0;
+}
+
+#message br {
+	padding: 10px 0;
+}
+
 #login-container {
 	margin: 100px auto 0 auto;
 	width: 360px;
 }
 
 #login-form {
-	height: 200px;
-	background: url(images/login-bg.png) no-repeat;
-	padding: 35px 0 0 0;
+	/*height: 200px;
+	/*background: url(images/login-bg.png) no-repeat;*/
+	border-radius: 3px;
+	background: rgba(130, 188, 243, 0.5);
+	border: 1px solid #999;
+	padding: 35px 0 35px 0;
 	margin: 20px 0 0 0;
 }
 
 #login-form input {
 	font-family: "Calibri Light", "Calibri", Arial, sans-serif;
 	font-size: 20px;
+	border-radius: 3px;
 }
 
 .textBox {
 	height: 39px;
 	width: 284px;
-	background: url(images/login-textbox.png) no-repeat;
+	/*background: url(images/login-textbox.png) no-repeat;*/
+	box-shadow: 1px 1px 1px #999;
 	padding: 0 10px;
 	margin: 0 0 10px 0;
 	color: #888;
@@ -67,10 +89,16 @@ input {
 .button {
 	height: 39px;
 	width: 154px;
-	background: url(images/login-button-bg.png) no-repeat;
+	/*background: url(images/login-button-bg.png) no-repeat;*/
+	background: #7ea7c3;
+	box-shadow: 1px 2px 1px #999;
 	border-style: none;
 	color: #FFF;
 	margin: 10px 0 0 0;
+}
+
+.footer-link {
+	font-size: 18px;
 }
 
 #header {
@@ -115,31 +143,37 @@ input {
 }
 
 #chart-container ul {
-	padding: 0 40px 5px 25px;
-	list-style: url(images/tick.png);
+	/*padding: 0 40px 5px 25px;*/
+	list-style: none;
 }
 
 #chart-container li {
-	padding: 0 0 5px 0;
-	margin: 0 0 0 15px;
+	padding: 15px 50px 25px 15px;
+	margin: 0 35px 0 0;
 }
 
 #todo, #doing, #done {
 	margin: 10px 0 0 0;
     float: left;
     width: 280px;    
+}
+
+#todo li, #doing li, #done li {
+	/*margin: 10px 0 0 0;
+    float: left;*/
+    width: 280px;
     min-height: 192px;
 }
 
-#todo {
+#todo li {
 	background: url(images/postit-red.png) bottom left no-repeat, url(images/postit-red-bg.png) repeat-y;
 }
 
-#doing {
+#doing li {
 	background: url(images/postit-yellow.png) bottom left no-repeat, url(images/postit-yellow-bg.png) repeat-y;
 }
 
-#done {
+#done li {
 	background: url(images/postit-green.png) bottom left no-repeat, url(images/postit-green-bg.png) repeat-y;
 }
 
