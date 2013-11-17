@@ -21,20 +21,20 @@
 			return $this->password;
 		}
 
-		// createGroup function
+		// Create a new group
 		public function create_group($name) {
 			
 		}
-		// addGroup function
-		public function add_group($groupName) {
-			$this->groups[] = $groupName;
+		
+		// Add new group to member
+		public function add_group($group_name) {
+			$this->groups[] = $group_name;
 		}
 
 		// listGroups function
-		public function list_groups($members) {
-			if (array_key_exists('groups', $members[$name]))
-					foreach($members[$name]['groups'] as $group)
-						echo $group;
+		public function list_groups() {
+			foreach($this->groups as $group)
+				echo "<li><a href=\"show_projects.php?group=" . $group . "\">" . $group . "</a></li>" . PHP_EOL;
 		}	
 	}
 ?>
