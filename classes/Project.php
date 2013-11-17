@@ -1,95 +1,107 @@
 <?php
-	include_once "File.php";
+	include_once "FileManip.php";
 
 	class Project {
 		// Class Variables
 		private $name;
-		private $password;
+		private $group;
 		private $todo = array();
 		private $doing = array();
 		private $done = array();
 
 		// Constructor
-		public function __construct($name, $pass) {
+		public function __construct($name, $group) {
 			$this->name = $name;
-			$this->password = $pass;
-			$dir = "/" . $name;
-			//if (!is_dir($dir))
-			//	mkdir($dir);
-			//File::saveFile("pass.txt", $pass);
+			$this->group = $group;
 		}
 
-		// Debugging functions
-		public function dbgNameAndPass() {
-			echo $this->name . "<br />" . $this->password;
+		// Getters
+		public function get_name() {
+			return $this->name;
+		}
+
+		public function get_todo_array() {
+			return $this->todo;
+		}
+
+		public function get_doing_array() {
+			return $this->doing;
+		}
+
+		public function get_done_array() {
+			return $this->done;
 		}
 
 		// Add items
-		public function addToDo($item) {
+		public function add_todo($item) {
 			$this->todo[] = $item;
-			File::saveFile($this->name . "/todo.txt", $item);
+			FileManip::saveFile();
 		}
-		public function addDoing($item) {
+		public function add_doing($item) {
 			$this->doing[] = $item;
-			File::saveFile($this->name . "/doing.txt", $item);
+			FileManip::saveFile($this->name . "/doing.txt", $item);
 		}
-		public function addDone($item) {
+		public function add_done($item) {
 			$this->done[] = $item;
-			File::saveFile($this->name . "/done.txt", $item);
+			FileManip::saveFile($this->name . "/done.txt", $item);
 		}
 
 		// Transitions
 		// ToDo -> Doing
-		public function nowDoing($position) {
+		public function todo_to_doing($position) {
 			$this->doing[] = $this->todo[$position];
 			unset($this->todo[$position]);
-			$this->todo = array_values($this->todo);
+			//$this->todo = array_values($this->todo);
 		}
 		// Doing -> Done
-		public function nowDone($position) {
+		public function doing_to_done($position) {
 			$this->done[] = $this->doing[$position];
 			unset($this->doing[$position]);
-			$this->doing = array_values($this->doing);
+			//$this->doing = array_values($this->doing);
+		}
+		// Doing -> ToDo
+		public function doing_to_todo($position) {
+			$this->todo[] = $this->doing[$position];
+			unset($this->doing[$position]);
+			//$this->todo = array_values($this->todo);
+		}
+		// Done -> Doing
+		public function done_to_doing($position) {
+			$this->doing[] = $this->done[$position];
+			unset($this->done[$position]);
+			//$this->doing = array_values($this->doing);
 		}
 
 		// Deleters
-		public function delToDo($position) {
+		public function del_todo($position) {
 			unset($this->todo[$position]);
-			$this->todo = array_values($this->todo);
+			//$this->todo = array_values($this->todo);
 		}
-		public function delDoing($position) {
+		public function del_doing($position) {
 			unset($this->doing[$position]);
-			$this->doing = array_values($this->doing);
+			//$this->doing = array_values($this->doing);
 		}
-		public function delDone($position) {
+		public function del_done($position) {
 			unset($this->done[$position]);
-			$this->done = array_values($this->done);
+			//$this->done = array_values($this->done);
 		}
 
 		// Print the project status chart
-		public function printChart() {
-			echo "<table>
-				  <tr><th>ToDo</th>
-				      <th>Doing</th>
-				      <th>Done</th>
-				  </tr>
-				  <tr><td><ul>";
+		public function print_chart() {
+			echo	"<div id=\"chart-container\">" . PHP_EOL .
+					"	<div id=\"todo\">" . PHP_EOL .
+					"		<div class=\"title\">To Do</div>" . PHP_EOL .
+					"		<ul>" . PHP_EOL;
 			foreach ($this->todo as $item) {
-				echo "<li>" . $item . "</li>";
+				echo	"			<li>" . $item . "</li>" .
+						"<br /><input type=\"button\" class=\"button-delete\" /> <input type=\"button\" class=\"button-next\" />";
 			}
-			//echo readList("/" . $this->name . "/" . "todo.txt");
-			echo "</ul></td><td><ul>";
 			foreach ($this->doing as $item) {
 				echo "<li>" . $item . "</li>";
 			}
-			//echo readList("/" . $this->name . "/" . "doing.txt");
-			echo "</ul></td><td><ul>";
-			//foreach ($this->done as $item) {
-			//	echo "<li>" . $item . "</li>";
-			//}
-			$dir = $this->name . "/done.txt"
-			echo readList( $dir);
-			echo "</ul></td><td></tr></table>";
+			foreach ($this->done as $item) {
+				echo "<li>" . $item . "</li>";
+			}
 		}
 	}
 ?>
