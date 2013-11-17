@@ -40,6 +40,8 @@ input {
 	font-family: "Rockwell", "Tahoma MS", Verdana, Arial, sans-serif;
 	font-size: 54px;
 	text-align: center;
+	color: #454a4e;
+	text-shadow: 1px 1px 1px #9ea7ae;
 }
 
 #message {
@@ -219,5 +221,6 @@ input {
 }
 
 .disable {
-	background: 50%;
+	opacity: 0.4;
+	filter: alpha(opacity = 40);
 }
