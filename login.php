@@ -3,6 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Login - Pluto</title>
 <link href="style.css" media="all" rel="Stylesheet" type="text/css">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 </head>
 
 <body>
@@ -16,7 +17,7 @@
 		<input type="submit" name="login" value="Login" class="button" />
 	</form>
 
-	<p><a href="register.php">Register an account</a></p>
+	<p class="footer-link"><a href="register.php">Register an account</a></p>
 </div>
 </body>
 </html>
