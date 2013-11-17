@@ -1,6 +1,6 @@
 <?php
 	if($_POST['register']) {
-		include_once "classes/File.php";
+		include_once "classes/FileManip.php";
 		include_once "classes/Member.php";
 		include_once "classes/Message.php";
 
@@ -18,7 +18,7 @@
 			else {
 				$pass = md5($pass);
 				$member = new Member($user, $pass);
-				File::save_new_member($member);
+				FileManip::save_new_member($member);
 				Message::show("Registered successfully", "You've been successfully registered in the website.<br /><br /><a href=\"login.php\">Click here to log in now.</a>");
 			}
 		}
