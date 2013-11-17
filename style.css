@@ -1,9 +1,11 @@
-/*******************************\
-*  Style.css file for Pluto		*
-*  Developed by:				*
-*  Yago Arroyo and				*
-*  Leonardo Lopes				*
-\*******************************/
+/************************************************************
+*		Style.css file for Pluto, a project organizer		*
+*		developed by Yago Arroyo and Leonardo Lopes			*
+*															*
+*		Pluto's source-code is available at					*
+*		http://github.com/yagoag/Pluto-project-organizer	*
+*															*
+************************************************************/
 
 @font-face {
 	font-family: "Rockwell";
@@ -44,6 +46,28 @@ input {
 	text-shadow: 1px 1px 1px #9ea7ae;
 }
 
+.textBox {
+	height: 39px;
+	width: 284px;
+	box-shadow: 1px 1px 1px #999;
+	padding: 0 10px;
+	margin: 0 0 10px 0;
+	color: #888;
+}
+
+.button {
+	height: 39px;
+	background: #7ea7c3;
+	box-shadow: 1px 2px 1px #999;
+	border-style: none;
+	color: #FFF;
+	margin: 10px 0 0 0;
+}
+
+.footer-link {
+	font-size: 18px;
+}
+
 #message {
 	text-align: left;
 	border-radius: 3px;
@@ -63,8 +87,6 @@ input {
 }
 
 #login-form {
-	/*height: 200px;
-	/*background: url(images/login-bg.png) no-repeat;*/
 	border-radius: 3px;
 	background: rgba(130, 188, 243, 0.5);
 	border: 1px solid #999;
@@ -72,35 +94,14 @@ input {
 	margin: 20px 0 0 0;
 }
 
-#login-form input {
+input {
 	font-family: "Calibri Light", "Calibri", Arial, sans-serif;
 	font-size: 20px;
 	border-radius: 3px;
 }
 
-.textBox {
-	height: 39px;
-	width: 284px;
-	/*background: url(images/login-textbox.png) no-repeat;*/
-	box-shadow: 1px 1px 1px #999;
-	padding: 0 10px;
-	margin: 0 0 10px 0;
-	color: #888;
-}
-
-.button {
-	height: 39px;
+#login-form .button {
 	width: 154px;
-	/*background: url(images/login-button-bg.png) no-repeat;*/
-	background: #7ea7c3;
-	box-shadow: 1px 2px 1px #999;
-	border-style: none;
-	color: #FFF;
-	margin: 10px 0 0 0;
-}
-
-.footer-link {
-	font-size: 18px;
 }
 
 #header {
@@ -138,6 +139,42 @@ input {
 	font-size: 18px;
 }
 
+#container {
+	width: 650px;
+	margin: auto;
+	padding: 35px 0 0 0;
+	text-align: left;
+}
+
+#container ul {
+	list-style: url(images/tick.png);
+	font-size: 24px;
+}
+
+#container li {
+	padding: 8px 0 0 0;
+}
+
+#container li a {
+	color: #3e4346;
+}
+
+#container li a:hover {
+	color: #60676f;
+}
+
+#container .title {
+	color: #68737b;
+	font-size: 38px;
+	float: left;
+	text-align: left;
+}
+
+#container .button {
+	min-width: 100px;
+	float: right;
+}
+
 #chart-container {
     width: 840px;
     margin: 0 auto;
@@ -145,7 +182,6 @@ input {
 }
 
 #chart-container ul {
-	/*padding: 0 40px 5px 25px;*/
 	list-style: none;
 }
 
@@ -161,8 +197,6 @@ input {
 }
 
 #todo li, #doing li, #done li {
-	/*margin: 10px 0 0 0;
-    float: left;*/
     width: 280px;
     min-height: 192px;
 }
@@ -218,9 +252,4 @@ input {
 	width: 16px;
 	height: 16px;
 	background: url(images/button-next.png) no-repeat;
-}
-
-.disable {
-	opacity: 0.4;
-	filter: alpha(opacity = 40);
 }
