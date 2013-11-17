@@ -217,7 +217,6 @@ input {
 	font-family: "Rockwell", "Tahoma MS", Verdana, Arial, sans-serif;
 	font-size: 32px;
 	text-align: center;
-	background: url(images/postit-title.png);
 }
 
 #todo .title {
@@ -230,6 +229,24 @@ input {
 
 #done .title {
 	color: #29c200;
+}
+
+#chart-container .new-item {
+	width: 20px;
+	height: 20px;
+	padding: 5px 0 0 0;
+}
+
+#todo .new-item {
+	background: url(images/button-new-todo.png);
+}
+
+#doing .new-item {
+	background: url(images/button-new-doing.png);
+}
+
+#done .new-item {
+	background: url(images/button-new-done.png);
 }
 
 .clear {
