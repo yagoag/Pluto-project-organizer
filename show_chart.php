@@ -1,7 +1,14 @@
+<?php
+	include_once "protect.php";
+	$name = $_SESSION['username'];
+	$group = $_GET['group'];
+	$project = $_GET['project'];
+?>
+
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>ProjectName - Pluto</title>
+	<title><?php echo $project ?> - Pluto</title>
 	<link href="style.css" media="all" rel="Stylesheet" type="text/css">
 </head>
 
@@ -11,12 +18,12 @@
 		<img src="images/logo-small.png" />
 	</div>
 	<div class="userinfo">
-		<p class="username">Username</p>
-		<p class="logout"><a href="#">Logout</a></p>
+		<p class="username"><?php echo $name; ?></p>
+		<p class="logout"><a href="logout.php">Logout</a></p>
 	</div>
 	<div class="info">
-		<p>Group: GroupName</p>
-		<p>Project: ProjectName</p>
+		<p>Group: <?php echo $group; ?></p>
+		<p>Project: <?php echo $project; ?></p>
 	</div>
 </div>
 
