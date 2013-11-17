@@ -22,12 +22,19 @@
 		}
 
 		// createGroup function
-		public function createGroup($name) {
+		public function create_group($name) {
 			
 		}
 		// addGroup function
-		public function addGroup($groupName) {
+		public function add_group($groupName) {
 			$this->groups[] = $groupName;
 		}
+
+		// listGroups function
+		public function list_groups($members) {
+			if (array_key_exists('groups', $members[$name]))
+					foreach($members[$name]['groups'] as $group)
+						echo $group;
+		}	
 	}
 ?>
