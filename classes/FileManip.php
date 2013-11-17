@@ -46,6 +46,31 @@
 			self::save_file("members.ini", $contents);
 		}
 
+		// Save projects array to INI
+		public static function save_projects_ini($projects) {
+			$contents = "";
+
+			foreach ($projects as $project => $item) {
+				$contents .= "[" . $project . "]" . PHP_EOL . "group = \"" . $item['group'] . "\"" . PHP_EOL;
+
+				if (array_key_exists('todo', $item))
+					foreach($item['todo'] as $todo)
+						$contents .= "todo[] = \"" . $todo . "\"" . PHP_EOL;
+
+				if (array_key_exists('doing', $item))
+					foreach($item['doing'] as $doing)
+						$contents .= "doing[] = \"" . $doing . "\"" . PHP_EOL;
+
+				if (array_key_exists('done', $item))
+					foreach($item['done'] as $todo)
+						$contents .= "done[] = \"" . $done . "\"" . PHP_EOL;
+
+				$contents .= PHP_EOL;
+			}
+
+			self::save_file("projects.ini", $contents);
+		}
+
 		// Save three-level array to INI (converts from array => array => array to file => section => array)
 		public static function save_array_ini($name, $array) {
 			$contents = "";
