@@ -3,22 +3,23 @@
 	include_once "Member.php";
 
 	class ProjGroup extends Group {
-		//private $name;
-		//private $members = array();
 		private $projects = array();
-		private static $groups = array();
 		
 		// Constructor
 		public function __contruct($name, $member) {
 			$this->name = $name;
 			$this->members[] = $member;
-			$groups[] = $this;
 		}
-		
-		// addMember function
-		public function addMember($member) {
-			$this->members[] = $member;
-			$member.addCourse($this->name);
+
+		// Add a project to the group
+		public function add_project($project) {
+			$this->projects[] = $project;
+		}
+
+		// List projects of the group
+		public function list_projects() {
+			foreach ($this->projects as $project)
+				echo "<li><a href=\"show_chart.php?group=" . $this->name . "&project=" . $project . "\">" . $project . "</a></li>" . PHP_EOL;
 		}
 	}
 ?>
