@@ -35,15 +35,15 @@
 		// Add items
 		public function add_todo($item) {
 			$this->todo[] = $item;
-			FileManip::saveFile();
+			//FileManip::saveFile();
 		}
 		public function add_doing($item) {
 			$this->doing[] = $item;
-			FileManip::saveFile($this->name . "/doing.txt", $item);
+			//FileManip::saveFile($this->name . "/doing.txt", $item);
 		}
 		public function add_done($item) {
 			$this->done[] = $item;
-			FileManip::saveFile($this->name . "/done.txt", $item);
+			//FileManip::saveFile($this->name . "/done.txt", $item);
 		}
 
 		// Transitions
@@ -86,21 +86,27 @@
 			//$this->done = array_values($this->done);
 		}
 
-		// Print the project status chart
-		public function print_chart() {
-			echo	"<div id=\"chart-container\">" . PHP_EOL .
-					"	<div id=\"todo\">" . PHP_EOL .
-					"		<div class=\"title\">To Do</div>" . PHP_EOL .
-					"		<ul>" . PHP_EOL;
-			foreach ($this->todo as $item) {
-				echo	"			<li>" . $item . "</li>" .
-						"<br /><input type=\"button\" class=\"button-delete\" /> <input type=\"button\" class=\"button-next\" />";
+		// Print the todo list
+		public function print_todo() {
+			foreach ($this->todo as $id => $item) {
+				echo "<li>" . $item . PHP_EOL .
+					 "<br /><a href=\"chart_do.php?project=" . $this->name . "&act=del_todo&id=" . $id . "\"><input type=\"button\" class=\"button-delete\" /></a> <a href=\"chart_do.php?project=" . $this->name . "&act=todo_to_doing&id=" . $id . "\"><input type=\"button\" class=\"button-next\" /></a></li>";
 			}
-			foreach ($this->doing as $item) {
-				echo "<li>" . $item . "</li>";
+		}
+
+		// Print the doing list
+		public function print_doing() {
+			foreach ($this->doing as $id => $item) {
+				echo "<li>" . $item . PHP_EOL .
+					 "<br /><a href=\"chart_do.php?project=" . $this->name . "&act=doing_to_todo&id=" . $id . "\"><input type=\"button\" class=\"button-back\" /></a> <a href=\"chart_do.php?project=" . $this->name . "&act=del_doing&id=" . $id . "\"><input type=\"button\" class=\"button-delete\" /></a> <a href=\"chart_do.php?project=" . $this->name . "&act=doing_to_done&id=" . $id . "\"><input type=\"button\" class=\"button-next\" /></a></li>";
 			}
-			foreach ($this->done as $item) {
-				echo "<li>" . $item . "</li>";
+		}
+
+		// Print the done list
+		public function print_done() {
+			foreach ($this->done as $id => $item) {
+				echo "<li>" . $item . PHP_EOL .
+					 "<br /><a href=\"chart_do.php?project=" . $this->name . "&act=done_to_doing&id=" . $id . "\"><input type=\"button\" class=\"button-back\" /></a> <a href=\"chart_do.php?project=" . $this->name . "&act=del_done&id=" . $id . "\"><input type=\"button\" class=\"button-delete\" /></a></li>";
 			}
 		}
 	}
