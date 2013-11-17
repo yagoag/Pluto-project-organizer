@@ -6,9 +6,8 @@
 		private $projects = array();
 		
 		// Constructor
-		public function __contruct($name, $member) {
-			$this->name = $name;
-			$this->members[] = $member;
+		public function __construct($name, $member) {
+			parent::__construct($name, $member);
 		}
 
 		// Add a project to the group
@@ -19,7 +18,7 @@
 		// List projects of the group
 		public function list_projects() {
 			foreach ($this->projects as $project)
-				echo "<li><a href=\"show_chart.php?group=" . $this->name . "&project=" . $project . "\">" . $project . "</a></li>" . PHP_EOL;
+				echo "<li><a href=\"show_chart.php?group=" . $this->get_name() . "&project=" . $project . "\">" . $project . "</a></li>" . PHP_EOL;
 		}
 	}
 ?>

@@ -17,9 +17,11 @@
 
 		// Add groups to the object
 		foreach ($groups[$group]['projects'] as $project)
-			$group_obj.add_project($project);
+			$group_obj->add_project($project);
 	} else
 		$has_projects = false;
+
+	print_r($group_obj);
 ?>
 
 <html>
@@ -27,9 +29,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title><?php echo $group; ?>'s Projects - Pluto</title>
 	<link href="style.css" media="all" rel="Stylesheet" type="text/css">
-	<script>
-
-	</script>
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 </head>
 
 <body>
