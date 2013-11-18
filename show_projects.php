@@ -42,7 +42,7 @@
 	</div>
 	<div class="info">
 		<p>Group: <?php echo $group; ?></p>
-		<p><input class="button" type="button" value="Add Member" /></p>
+		<p><?php echo "<a href=\"add_member.php?group=" . $group . "\">"; ?><input class="button" type="button" value="Add Member" /></a></p>
 	</div>
 </div>
 
