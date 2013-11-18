@@ -18,11 +18,12 @@
 			// Verify if member exists in file
 			if (array_key_exists($name, $members)) {
 				// Search for the name in the existing groups
-				foreach ($members[$name]['groups'] as $existing_group)
-					if ($existing_group == $group) {
-						Message::show_logged_in($name, "Failed to Create", "A group with this name alreay exists.<br /><br /><a href=\"create_group.php\">Try another name</a>.");
-						die();
-					}
+				if (array_key_exists('groups', $members[$name]))
+					foreach ($members[$name]['groups'] as $existing_group)
+						if ($existing_group == $group) {
+							Message::show_logged_in($name, "Failed to Create", "A group with this name alreay exists.<br /><br /><a href=\"create_group.php\">Try another name</a>.");
+							die();
+						}
 
 				// Create the group into groups.ini
 				FileManip::save_new_group($group);
