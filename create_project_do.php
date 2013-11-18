@@ -2,39 +2,39 @@
 	include_once "protect.php";
 
 	$name = $_SESSION['username'];
+	$group = $_GET['group'];
 
 	if($_POST['create']) {
+		include_once "classes/Project.php";
 		include_once "classes/FileManip.php";
 		include_once "classes/Message.php";
 
-		$group = $_POST['group'];
+		$project = $_POST['project'];
 
-		if(empty($group))
-			Message::show_logged_in($name, "Failed to Create", "Failed to create new group: Type in a name for the group.<br /><br /><a href=\"create_group.php\">Try again</a>.");
+		if(empty($project))
+			Message::show_logged_in($name, "Failed to Create", "Failed to create new project: Type in a name for the project.<br /><br /><a href=\"create_project.php\">Try again</a>.");
 		else {
-			// Import members' info from file
-			$members = parse_ini_file("members.ini", true);
+			// Import project's info from file
+			$projects = parse_ini_file("projects.ini", true);
 
-			// Verify if member exists in file
-			if (array_key_exists($name, $members)) {
-				// Search for the name in the existing groups
-				foreach ($members[$name]['groups'] as $existing_group)
-					if ($existing_group == $group) {
-						Message::show_logged_in($name, "Failed to Create", "A group with this name alreay exists.<br /><br /><a href=\"create_group.php\">Try another name</a>.");
-						die();
-					}
+			// Verify if project already exists
+			if (array_key_exists($project, $projects))
+				Message::show_logged_in($name, "Failed to Create", "A project with this name alreay exists.<br /><br /><a href=\"create_project.php\">Try another name</a>.");
+			else {
+				// Create a Project objetc
+				$project_obj = new Project($project, $group);
 
-				// Create the group into groups.ini
-				FileManip::save_new_group($group);
+				// Add new project to projects.ini
+				FileManip::save_new_project($project_obj);
 
-				// Add it to the creator's groups and save it into members.ini
-				$members[$name]['groups'][] = $group;
-				FileManip::save_members_ini($members);
+				// Add new project to the group
+				$groups = parse_ini_file("groups.ini", true);
+				$groups[$group]['projects'][] = $project;
+				FileManip::save_groups_ini($groups);
 
-				Message::show_logged_in($name, "Group Created", "Your group has been successfully created.<br /><br /><a href=\"show_groups.php\">Click here to see your groups.</a>");
-			} else
-				// Member not (anymore) in the files, ends its (illegal) section
-				header("Location: logout.php");
+				// Show successfull creation message
+				Message::show_logged_in($name, "Project Created", "Your project has been successfully created.<br /><br /><a href=\"show_projects.php?group=" . $group . "\">Click here to see " . $group . "'s projects.</a>");
+			}
 		}
 	}
 ?>
