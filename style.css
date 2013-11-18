@@ -12,6 +12,18 @@
 	src: url(fonts/rockwell.ttf);
 }
 
+@font-face {
+	font-family: "Calibri Light";
+	font-variant: normal;
+	src: url(fonts/calibril.ttf);
+}
+
+@font-face {
+	font-family: "Calibri Light";
+	font-variant: inherit;
+	src: url(fonts/calibrili.ttf);
+}
+
 body {
 	background: url(images/bg.png) repeat;
 	text-align: center;
