@@ -13,14 +13,17 @@
 	$project_obj = new Project($project, $group);
 
 	// Add all the items of the project to it
-	foreach ($projects[$project]['todo'] as $item)
-		$project_obj->add_todo($item);
+	if (array_key_exists('todo', $projects[$project]))
+		foreach ($projects[$project]['todo'] as $item)
+			$project_obj->add_todo($item);
 
-	foreach ($projects[$project]['doing'] as $item)
-		$project_obj->add_doing($item);
+	if (array_key_exists('doing', $projects[$project]))
+		foreach ($projects[$project]['doing'] as $item)
+			$project_obj->add_doing($item);
 	
-	foreach ($projects[$project]['done'] as $item)
-		$project_obj->add_done($item);
+	if (array_key_exists('done', $projects[$project]))
+		foreach ($projects[$project]['done'] as $item)
+			$project_obj->add_done($item);
 ?>
 
 <html>

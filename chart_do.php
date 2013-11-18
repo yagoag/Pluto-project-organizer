@@ -79,5 +79,5 @@
 	FileManip::save_projects_ini($projects);
 
 	// page redirection
-	header("Location: show_chart.php?group=" . $group . "&project=" . $project);
+	header("Location: show_chart.php?group=" . $projects[$project]['group'] . "&project=" . $project);
 ?>
