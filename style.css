@@ -186,19 +186,15 @@ input {
 }
 
 #chart-container li {
-	padding: 15px 50px 25px 15px;
-	margin: 0 35px 0 0;
+	padding: 15px 10px 25px 15px;
+	width: 220px;
+	min-height: 192px;
 }
 
 #todo, #doing, #done {
 	margin: 10px 0 0 0;
     float: left;
-    width: 280px;    
-}
-
-#todo li, #doing li, #done li {
     width: 280px;
-    min-height: 192px;
 }
 
 #todo li {
