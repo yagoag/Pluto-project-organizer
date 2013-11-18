@@ -10,7 +10,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>New Group - Pluto</title>
+	<title>New Item - Pluto</title>
 	<link href="style.css" media="all" rel="Stylesheet" type="text/css">
 	<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 </head>
