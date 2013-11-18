@@ -62,7 +62,7 @@
 						$contents .= "doing[] = \"" . $doing . "\"" . PHP_EOL;
 
 				if (array_key_exists('done', $item))
-					foreach($item['done'] as $todo)
+					foreach($item['done'] as $done)
 						$contents .= "done[] = \"" . $done . "\"" . PHP_EOL;
 
 				$contents .= PHP_EOL;
