@@ -20,6 +20,10 @@
 			return $this->name;
 		}
 
+		public function get_group() {
+			return $this->group;
+		}
+
 		public function get_todo_array() {
 			return $this->todo;
 		}

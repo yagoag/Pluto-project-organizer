@@ -71,6 +71,21 @@
 			self::save_file("projects.ini", $contents);
 		}
 
+		// Save groups array to INI
+		public static function save_groups_ini($groups) {
+			$contents = "";
+
+			foreach ($groups as $group => $array) {
+				$contents .= "[" . $group . "]" . PHP_EOL;
+				foreach($array as $identifier => $item)
+					foreach($item as $i)
+						$contents .= $identifier . "[] = \"" . $i . "\"" . PHP_EOL;
+				$contents .= PHP_EOL;
+			}
+
+			self::save_file("groups.ini", $contents);
+		}
+
 		// Save three-level array to INI (converts from array => array => array to file => section => array)
 		public static function save_array_ini($name, $array) {
 			$contents = "";
@@ -106,8 +121,9 @@
 		// Save a new project
 		public static function save_new_project($project) {
 			$name = $project->get_name();
+			$group = $project->get_group();
 
-			$info = "[" . $name . "]" . PHP_EOL . PHP_EOL;
+			$info = "[" . $name . "]" . PHP_EOL . "group=\"" . $group . "\"" . PHP_EOL . PHP_EOL;
 
 			self::add_to_file("projects.ini", $info);
 		}
