@@ -28,6 +28,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title><?php echo $project ?> - Pluto</title>
 	<link href="style.css" media="all" rel="Stylesheet" type="text/css">
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 </head>
 
 <body>

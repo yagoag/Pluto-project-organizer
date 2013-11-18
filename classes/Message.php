@@ -8,6 +8,7 @@
 				'		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' . PHP_EOL .
 				'		<title>' . $title . ' - Pluto</title>' . PHP_EOL .
 				'		<link href="style.css" media="all" rel="Stylesheet" type="text/css">' . PHP_EOL .
+				'		<link rel="icon" type="image/x-icon" href="images/favicon.ico" />' . PHP_EOL .
 				'	</head>' . PHP_EOL .
 				PHP_EOL .
 				'	<body>' . PHP_EOL .
@@ -29,6 +30,7 @@
 				'		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' . PHP_EOL .
 				'		<title>' . $title . ' - Pluto</title>' . PHP_EOL .
 				'		<link href="style.css" media="all" rel="Stylesheet" type="text/css">' . PHP_EOL .
+				'		<link rel="icon" type="image/x-icon" href="images/favicon.ico" />' . PHP_EOL .
 				'	</head>' . PHP_EOL .
 				PHP_EOL .
 				'	<body>' . PHP_EOL .
