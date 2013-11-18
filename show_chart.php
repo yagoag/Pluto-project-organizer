@@ -52,7 +52,7 @@
 <div id="chart-container">
 	<!-- ToDo -->
 	<div id="todo">
-		<div class="title"><?php echo "<a href=\"chart_do.php?project=\"" . $project . "&act=add_todo\">"; ?><input type="button" class="new-item" /></a> To Do</div>
+		<div class="title"><?php echo "<a href=\"create_chart_item.php?group=" . $group . "&project=" . $project . "&act=add_todo\">"; ?><input type="button" class="new-item" /></a> To Do</div>
 		<ul>
 			<?php $project_obj->print_todo(); ?>
 		</ul>
@@ -60,7 +60,7 @@
 
 	<!-- Doing -->
 	<div id="doing">
-		<div class="title"><?php echo "<a href=\"chart_do.php?project=\"" . $project . "&act=add_doing\">"; ?><input type="button" class="new-item" /></a> Doing</div>
+		<div class="title"><?php echo "<a href=\"create_chart_item.php?group=" . $group . "&project=" . $project . "&act=add_doing\">"; ?><input type="button" class="new-item" /></a> Doing</div>
 		<ul>
 			<?php $project_obj->print_doing(); ?>
 		</ul>
@@ -68,7 +68,7 @@
 
 	<!-- Done -->
 	<div id="done">
-		<div class="title"><?php echo "<a href=\"chart_do.php?project=\"" . $project . "&act=add_done\">"; ?><input type="button" class="new-item" /></a> Done</div>
+		<div class="title"><?php echo "<a href=\"create_chart_item.php?group=" . $group . "&project=" . $project . "&act=add_done\">"; ?><input type="button" class="new-item" /></a> Done</div>
 		<ul>
 			<?php $project_obj->print_done(); ?>
 		</ul>
