@@ -12,16 +12,15 @@
 	$groups = parse_ini_file("groups.ini", true);
 
 	// Verify if member exists in file
-	if (array_key_exists($group, $groups)) {
+	if (array_key_exists('projects', $groups[$group])) {
 		$has_projects = true;
 
 		// Add groups to the object
-		foreach ($groups[$group]['projects'] as $project)
-			$group_obj->add_project($project);
+		if (array_key_exists('projects', $groups[$group]))
+			foreach ($groups[$group]['projects'] as $project)
+				$group_obj->add_project($project);
 	} else
 		$has_projects = false;
-
-	print_r($group_obj);
 ?>
 
 <html>
@@ -43,13 +42,13 @@
 	</div>
 	<div class="info">
 		<p>Group: <?php echo $group; ?></p>
+		<p><input class="button" type="button" value="Add Member" /></p>
 	</div>
 </div>
 
 <div id="container">
 	<div class="title"><?php echo $group; ?>'s Projects</div>
 	<?php echo "<a href=\"create_project.php?group=" . $group . "\">"; ?><input class="button" type="button" value="New Project" /></a>
-	<input class="button" type="button" value="Add Member" />
 	
 	<ul class="clear">
 		<?php
