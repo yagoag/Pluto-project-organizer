@@ -38,7 +38,7 @@
 <body>
 <div id="header">
 	<div class="logo">
-		<img src="images/logo-small.png" />
+		<a href="index.php"><img src="images/logo-small.png" /></a>
 	</div>
 	<div class="userinfo">
 		<p class="username"><?php echo $name; ?></p>

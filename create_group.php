@@ -15,10 +15,10 @@
 <body>
 <div id="header">
 	<div class="logo">
-		<img src="images/logo-small.png" />
+		<a href="index.php"><img src="images/logo-small.png" /></a>
 	</div>
 	<div class="userinfo">
-		<p class="username"><?php echo $name; ?></p>
+		<p class="username"><a href="show_groups.php"><?php echo $name; ?></a></p>
 		<p class="logout"><a href="logout.php">Logout</a></p>
 	</div>
 </div>

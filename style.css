@@ -7,6 +7,11 @@
 *															*
 ************************************************************/
 
+
+/*/
+/*		FONT IMPORTS
+/*/
+
 @font-face {
 	font-family: "Rockwell";
 	src: url(fonts/rockwell.ttf);
@@ -23,6 +28,10 @@
 	font-variant: inherit;
 	src: url(fonts/calibrili.ttf);
 }
+
+/*/
+/*		BASIC STYLE DEFINITIONS
+/*/
 
 body {
 	background: url(images/bg.png) repeat;
@@ -46,8 +55,26 @@ a:hover {
 	color: #4a6d8f;
 }
 
+a:hover img {
+	opacity: .75;
+}
+
 input {
 	border-style: none;
+}
+
+input {
+	font-family: "Calibri Light", "Calibri", Arial, sans-serif;
+	font-size: 20px;
+	border-radius: 3px;
+}
+
+/*/
+/*		GENERAL CLASSES
+/*/
+
+.clear {
+	clear: both;
 }
 
 .title {
@@ -80,6 +107,10 @@ input {
 	font-size: 18px;
 }
 
+/*/
+/*		NESSAGES AND LOGIN
+/*/
+
 #message {
 	text-align: left;
 	border-radius: 3px;
@@ -106,15 +137,13 @@ input {
 	margin: 20px 0 0 0;
 }
 
-input {
-	font-family: "Calibri Light", "Calibri", Arial, sans-serif;
-	font-size: 20px;
-	border-radius: 3px;
-}
-
 #login-form .button {
 	width: 154px;
 }
+
+/*/
+/*			HEADER
+/*/
 
 #header {
 	width: 900px;
@@ -135,8 +164,9 @@ input {
 	text-align: right;
 }
 
-#header .userinfo .username {
+#header .userinfo .username a {
 	font-size: 32px;
+	color: #68737b;
 }
 
 #header .userinfo .logout {
@@ -150,6 +180,10 @@ input {
 	padding: 10px 0 10px 0;
 	font-size: 18px;
 }
+
+/*/
+/*			CONTAINER
+/*/
 
 #container {
 	width: 650px;
@@ -186,6 +220,10 @@ input {
 	min-width: 100px;
 	float: right;
 }
+
+/*/
+/*			KANBAN CHART
+/*/
 
 #chart-container {
     width: 840px;
@@ -257,10 +295,10 @@ input {
 	background: url(images/button-new-done.png);
 }
 
-.clear {
-	clear: both;
-}
 
+/*/
+/*			POST-IT ACTION BUTTONS
+/*/
 .button-back {
 	width: 16px;
 	height: 16px;
