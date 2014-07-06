@@ -8,7 +8,7 @@
 	$member = new Member($name, $_SESSION['password']);
 
 	// Import members' info from file
-	$members = parse_ini_file("members.ini", true);
+	$members = parse_ini_file("members.php", true);
 
 	// Verify if member exists in file
 	if (array_key_exists($name, $members))

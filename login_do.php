@@ -12,7 +12,7 @@
 			include "classes/Message.php";
 			Message::show("Failed to login", "Please, type a password.<br /><br /><a href=\"login.php\">Try again</a>.");
 		} else {
-			$members = parse_ini_file("members.ini", true);
+			$members = parse_ini_file("members.php", true);
 
 			if(array_key_exists($user, $members)) {
 				$pass = md5($pass);

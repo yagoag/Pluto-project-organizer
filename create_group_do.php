@@ -13,7 +13,7 @@
 			Message::show_logged_in($name, "Failed to Create", "Failed to create new group: Type in a name for the group.<br /><br /><a href=\"create_group.php\">Try again</a>.");
 		else {
 			// Import members' info from file
-			$members = parse_ini_file("members.ini", true);
+			$members = parse_ini_file("members.php", true);
 
 			// Verify if member exists in file
 			if (array_key_exists($name, $members)) {

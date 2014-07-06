@@ -9,7 +9,7 @@
 	$group_obj = new ProjGroup($group, $name);
 
 	// Import members' info from file
-	$groups = parse_ini_file("groups.ini", true);
+	$groups = parse_ini_file("groups.php", true);
 
 	// Verify if member exists in file
 	if (array_key_exists('projects', $groups[$group])) {

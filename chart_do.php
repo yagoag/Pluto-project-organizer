@@ -12,7 +12,7 @@
         $item = $_POST['item'];
 	
 	// get projects array
-    $projects = parse_ini_file("projects.ini", true);
+    $projects = parse_ini_file("projects.php", true);
 
 	switch ($act) {
 		// add functions

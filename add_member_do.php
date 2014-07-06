@@ -10,7 +10,7 @@
 		$group = $_GET['group'];
 
 		// Import mebers from file
-		$members = parse_ini_file("members.ini", true);
+		$members = parse_ini_file("members.php", true);
 
 		// Checks if member exists
 		if (array_key_exists($member, $members)) {

@@ -7,7 +7,7 @@
 	$project = $_GET['project'];
 
 	// Read content of projects.ini into an array
-	$projects = parse_ini_file("projects.ini", true);
+	$projects = parse_ini_file("projects.php", true);
 
 	// Create a Project object
 	$project_obj = new Project($project, $group);

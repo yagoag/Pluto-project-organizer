@@ -12,7 +12,7 @@
 		elseif(empty($_POST['password']))
 			Message::show("Failed to register", "Type a password.<br /><br /><a href=\"register.php\">Try again</a>.");
 		else {
-			$members = parse_ini_file("members.ini", true);
+			$members = parse_ini_file("members.php", true);
 			if(array_key_exists($user, $members))
 				Message::show("Failed to register", "The username you chose is already taken.<br /><br /><a href=\"register.php\">Try again with another username.</a>");
 			else {

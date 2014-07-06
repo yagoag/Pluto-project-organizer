@@ -22,7 +22,8 @@
 		private static function save_file($directory, $info) {
 			$fw = fopen($directory, "w");
 
-			fwrite($fw, $info);
+			$info = "; <?php die(); '" . PHP_EOL . $info . PHP_EOL . ";' ?>"; // Should make file unreadable to outsiders
+            fwrite($fw, $info);
 
 			fclose($fw);
 		}
@@ -43,7 +44,7 @@
 				$contents .= PHP_EOL;
 			}
 
-			self::save_file("members.ini", $contents);
+			self::save_file("members.php", $contents);
 		}
 
 		// Save projects array to INI
@@ -68,7 +69,7 @@
 				$contents .= PHP_EOL;
 			}
 
-			self::save_file("projects.ini", $contents);
+			self::save_file("projects.php", $contents);
 		}
 
 		// Save groups array to INI
@@ -83,7 +84,7 @@
 				$contents .= PHP_EOL;
 			}
 
-			self::save_file("groups.ini", $contents);
+			self::save_file("groups.php", $contents);
 		}
 
 		// Save three-level array to INI (converts from array => array => array to file => section => array)
@@ -98,7 +99,7 @@
 				$contents .= PHP_EOL;
 			}
 
-			self::save_file($name . ".ini", $contents);
+			self::save_file($name . ".php", $contents);
 		}
 
 		// Save a new member
@@ -108,14 +109,14 @@
 
 			$info = "[" . $name . "]" . PHP_EOL . "pass = \"" . $pass . "\"" . PHP_EOL . PHP_EOL;
 
-			self::add_to_file("members.ini", $info);
+			self::add_to_file("members.php", $info);
 		}
 
 		// Save a new group
 		public static function save_new_group($group) {
 			$info = "[" . $group . "]" . PHP_EOL . PHP_EOL;
 
-			self::add_to_file("groups.ini", $info);
+			self::add_to_file("groups.php", $info);
 		}
 
 		// Save a new project
@@ -125,7 +126,7 @@
 
 			$info = "[" . $name . "]" . PHP_EOL . "group=\"" . $group . "\"" . PHP_EOL . PHP_EOL;
 
-			self::add_to_file("projects.ini", $info);
+			self::add_to_file("projects.php", $info);
 		}
 	}
 ?>
