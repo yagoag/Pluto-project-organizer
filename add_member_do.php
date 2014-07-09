@@ -32,6 +32,6 @@
 			Message::show_logged_in($name, "New member added", "The member was successfully added to the group.<br /><br /><a href=\"show_projects.php?group=" . $group . "\">Go back to " . $group . "'s projects</a>");
 		} else
 			// Show error
-			Message::show_logged_in($name, "Member not added", "The member typed doesn't exist.<br /><br /><a href=\"add_member.php?group=" . $group . "\">Try again</a>");
+			Message::show_logged_in($name, "Member not added", "The member selected doesn't exist.<br /><br /><a href=\"add_member.php?group=" . $group . "\">Try again</a>");
 	}
 ?>

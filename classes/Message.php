@@ -39,7 +39,7 @@
 				'		<img src="images/logo-small.png" />' . PHP_EOL .
 				'	</div>' . PHP_EOL .
 				'	<div class="userinfo">' . PHP_EOL .
-				'		<p class="username">' . $name . '</p>' . PHP_EOL .
+				'		<p class="username"><a href="show_groups.php">' . $name . '</a></p>' . PHP_EOL .
 				'		<p class="logout"><a href="logout.php">Logout</a></p>' . PHP_EOL .
 				'	</div>' . PHP_EOL .
 				'</div>' . PHP_EOL .
