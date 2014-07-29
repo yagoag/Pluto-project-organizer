@@ -13,6 +13,7 @@
 		private static function add_to_file($directory, $info) {
 			$fw = fopen($directory, "a");
 
+            $info = "; <?php die(); '" . PHP_EOL . $info . ";' ?>" . PHP_EOL; // Should make file unreadable to outsiders
 			fwrite($fw, $info . PHP_EOL);
 
 			fclose($fw);
@@ -22,7 +23,7 @@
 		private static function save_file($directory, $info) {
 			$fw = fopen($directory, "w");
 
-			$info = "; <?php die(); '" . PHP_EOL . $info . PHP_EOL . ";' ?>"; // Should make file unreadable to outsiders
+			$info = "; <?php die(); '" . PHP_EOL . $info . ";' ?>" . PHP_EOL; // Should make file unreadable to outsiders
             fwrite($fw, $info);
 
 			fclose($fw);
