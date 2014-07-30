@@ -1,5 +1,5 @@
 <?php
-	include_once "protect.php";
+	include_once "actions/protect.php";
 	include_once "classes/Project.php";
 
 	$name = $_SESSION['username'];
@@ -7,7 +7,7 @@
 	$project = $_GET['project'];
 
 	// Read content of projects.ini into an array
-	$projects = parse_ini_file("projects.php", true);
+	$projects = parse_ini_file("info/projects.php", true);
 
 	// Create a Project object
 	$project_obj = new Project($project, $group);
@@ -41,7 +41,7 @@
 	</div>
 	<div class="userinfo">
 		<p class="username"><a href="show_groups.php"><?php echo $name; ?></a></p>
-		<p class="logout"><a href="logout.php">Logout</a></p>
+		<p class="logout"><a href="actions/logout.php">Logout</a></p>
 	</div>
 	<div class="info">
 		<p>Group: <?php echo "<a href=\"show_projects.php?group=" . $group . "\">" . $group . "</a>"; ?></p>

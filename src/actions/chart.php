@@ -1,5 +1,5 @@
 <?php
-	include_once "classes/FileManip.php";
+	include_once "../classes/FileManip.php";
        
 	// initializing variables
     $act = $_GET['act'];
@@ -12,7 +12,7 @@
         $item = $_POST['item'];
 	
 	// get projects array
-    $projects = parse_ini_file("projects.php", true);
+    $projects = parse_ini_file("../info/projects.php", true);
 
 	switch ($act) {
 		// add functions
@@ -79,5 +79,5 @@
 	FileManip::save_projects_ini($projects);
 
 	// page redirection
-	header("Location: show_chart.php?group=" . $projects[$project]['group'] . "&project=" . $project);
+	header("Location: ../show_chart.php?group=" . $projects[$project]['group'] . "&project=" . $project);
 ?>

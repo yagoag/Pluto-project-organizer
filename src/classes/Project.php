@@ -94,7 +94,7 @@
 		public function print_todo() {
 			foreach ($this->todo as $id => $item) {
 				echo "<li>" . $item . PHP_EOL .
-					 "<br /><a href=\"chart_do.php?project=" . $this->name . "&act=del_todo&id=" . $id . "\"><input type=\"button\" class=\"button-delete\" /></a> <a href=\"chart_do.php?project=" . $this->name . "&act=todo_to_doing&id=" . $id . "\"><input type=\"button\" class=\"button-next\" /></a></li>";
+					 "<br /><a href=\"actions/chart.php?project=" . $this->name . "&act=del_todo&id=" . $id . "\"><input type=\"button\" class=\"button-delete\" /></a> <a href=\"actions/chart.php?project=" . $this->name . "&act=todo_to_doing&id=" . $id . "\"><input type=\"button\" class=\"button-next\" /></a></li>";
 			}
 		}
 
@@ -102,7 +102,7 @@
 		public function print_doing() {
 			foreach ($this->doing as $id => $item) {
 				echo "<li>" . $item . PHP_EOL .
-					 "<br /><a href=\"chart_do.php?project=" . $this->name . "&act=doing_to_todo&id=" . $id . "\"><input type=\"button\" class=\"button-back\" /></a> <a href=\"chart_do.php?project=" . $this->name . "&act=del_doing&id=" . $id . "\"><input type=\"button\" class=\"button-delete\" /></a> <a href=\"chart_do.php?project=" . $this->name . "&act=doing_to_done&id=" . $id . "\"><input type=\"button\" class=\"button-next\" /></a></li>";
+					 "<br /><a href=\"actions/chart.php?project=" . $this->name . "&act=doing_to_todo&id=" . $id . "\"><input type=\"button\" class=\"button-back\" /></a> <a href=\"actions/chart.php?project=" . $this->name . "&act=del_doing&id=" . $id . "\"><input type=\"button\" class=\"button-delete\" /></a> <a href=\"actions/chart.php?project=" . $this->name . "&act=doing_to_done&id=" . $id . "\"><input type=\"button\" class=\"button-next\" /></a></li>";
 			}
 		}
 
@@ -110,7 +110,7 @@
 		public function print_done() {
 			foreach ($this->done as $id => $item) {
 				echo "<li>" . $item . PHP_EOL .
-					 "<br /><a href=\"chart_do.php?project=" . $this->name . "&act=done_to_doing&id=" . $id . "\"><input type=\"button\" class=\"button-back\" /></a> <a href=\"chart_do.php?project=" . $this->name . "&act=del_done&id=" . $id . "\"><input type=\"button\" class=\"button-delete\" /></a></li>";
+					 "<br /><a href=\"actions/chart.php?project=" . $this->name . "&act=done_to_doing&id=" . $id . "\"><input type=\"button\" class=\"button-back\" /></a> <a href=\"actions/chart.php?project=" . $this->name . "&act=del_done&id=" . $id . "\"><input type=\"button\" class=\"button-delete\" /></a></li>";
 			}
 		}
 	}

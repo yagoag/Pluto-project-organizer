@@ -1,5 +1,5 @@
 <?php
-	include_once "protect.php";
+	include_once "actions/protect.php";
 	include_once "classes/Member.php";
 
 	$name = $_SESSION['username'];
@@ -8,7 +8,7 @@
 	$member = new Member($name, $_SESSION['password']);
 
 	// Import members' info from file
-	$members = parse_ini_file("members.php", true);
+	$members = parse_ini_file("info/members.php", true);
 
 	// Verify if member exists in file
 	if (array_key_exists($name, $members))
@@ -24,7 +24,7 @@
 			$has_groups = false;
 	else
 		// Member not (anymore) in the files, ends its (illegal) section
-		header("Location: logout.php");
+		header("Location: actions/logout.php");
 ?>
 
 <html>
@@ -42,7 +42,7 @@
 	</div>
 	<div class="userinfo">
 		<p class="username"><a href="show_groups.php"><?php echo $name; ?></a></p>
-		<p class="logout"><a href="logout.php">Logout</a></p>
+		<p class="logout"><a href="actions/logout.php">Logout</a></p>
 	</div>
 </div>
 

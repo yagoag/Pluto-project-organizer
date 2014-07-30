@@ -1,5 +1,5 @@
 <?php
-	include_once "protect.php";
+	include_once "actions/protect.php";
 
 	$name = $_SESSION['username'];
 	$group = $_GET['group'];
@@ -22,7 +22,7 @@
 	</div>
 	<div class="userinfo">
 		<p class="username"><a href="show_groups.php"><?php echo $name; ?></a></p>
-		<p class="logout"><a href="logout.php">Logout</a></p>
+		<p class="logout"><a href="actions/logout.php">Logout</a></p>
 	</div>
 	<div class="info">
 		<p>Group: <?php echo $group; ?></p>
@@ -33,7 +33,7 @@
 <div id="login-container">
 	<p class="title">New Item</p>
 
-	<?php echo "<form id=\"login-form\" name=\"create-item\" method=\"post\" action=\"chart_do.php?project=" . $project . "&act=" . $act . "\">"; ?>
+	<?php echo "<form id=\"login-form\" name=\"create-item\" method=\"post\" action=\"actions/chart.php?project=" . $project . "&act=" . $act . "\">"; ?>
 		<input type="text" name="item" placeholder="Item description" class="textBox" />
 		
 		<input type="submit" name="create" value="Create Item" class="button" />

@@ -8,4 +8,4 @@ Pluto is a PHP-based project organizer which intends to help productivity, creat
 * PHP 5+
 
 ## Installation
-Installing Pluto is simpler than ever! Just copy all the content of the folder to your webserver and access your website. No setup required!
+Installing Pluto is simpler than ever! Just copy all the content of "src/" to your webserver and access your website. No setup required!

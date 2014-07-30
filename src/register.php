@@ -10,7 +10,7 @@
 <div id="login-container">
 	<p class="title">Register</p>
 
-	<form id="login-form" name="register-form" method="post" action="register_do.php">
+	<form id="login-form" name="register-form" method="post" action="actions/register.php">
 		<input type="text" name="username" placeholder="Username" class="textBox" />
 		<input type="password" name="password" placeholder="Password" class="textBox" />
 		

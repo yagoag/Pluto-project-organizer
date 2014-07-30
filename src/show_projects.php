@@ -1,5 +1,5 @@
 <?php
-	include_once "protect.php";
+	include_once "actions/protect.php";
 	include_once "classes/ProjGroup.php";
 
 	$name = $_SESSION['username'];
@@ -9,7 +9,7 @@
 	$group_obj = new ProjGroup($group, $name);
 
 	// Import members' info from file
-	$groups = parse_ini_file("groups.php", true);
+	$groups = parse_ini_file("info/groups.php", true);
 
 	// Verify if member exists in file
 	if (array_key_exists('projects', $groups[$group])) {
@@ -38,7 +38,7 @@
 	</div>
 	<div class="userinfo">
 		<p class="username"><a href="show_groups.php"><?php echo $name; ?></a></p>
-		<p class="logout"><a href="logout.php">Logout</a></p>
+		<p class="logout"><a href="actions/logout.php">Logout</a></p>
 	</div>
 	<div class="info">
 		<p>Group: <?php echo $group; ?></p>

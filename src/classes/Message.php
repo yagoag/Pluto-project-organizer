@@ -7,8 +7,8 @@
 				'	<head>' . PHP_EOL .
 				'		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' . PHP_EOL .
 				'		<title>' . $title . ' - Pluto</title>' . PHP_EOL .
-				'		<link href="style.css" media="all" rel="Stylesheet" type="text/css">' . PHP_EOL .
-				'		<link rel="icon" type="image/x-icon" href="images/favicon.ico" />' . PHP_EOL .
+				'		<link href="../style.css" media="all" rel="Stylesheet" type="text/css">' . PHP_EOL .
+				'		<link rel="icon" type="image/x-icon" href="../images/favicon.ico" />' . PHP_EOL .
 				'	</head>' . PHP_EOL .
 				PHP_EOL .
 				'	<body>' . PHP_EOL .
@@ -29,18 +29,18 @@
 				'	<head>' . PHP_EOL .
 				'		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' . PHP_EOL .
 				'		<title>' . $title . ' - Pluto</title>' . PHP_EOL .
-				'		<link href="style.css" media="all" rel="Stylesheet" type="text/css">' . PHP_EOL .
+				'		<link href="../style.css" media="all" rel="Stylesheet" type="text/css">' . PHP_EOL .
 				'		<link rel="icon" type="image/x-icon" href="images/favicon.ico" />' . PHP_EOL .
 				'	</head>' . PHP_EOL .
 				PHP_EOL .
 				'	<body>' . PHP_EOL .
 				'<div id="header">' . PHP_EOL .
 				'	<div class="logo">' . PHP_EOL .
-				'		<img src="images/logo-small.png" />' . PHP_EOL .
+				'		<img src="../images/logo-small.png" />' . PHP_EOL .
 				'	</div>' . PHP_EOL .
 				'	<div class="userinfo">' . PHP_EOL .
 				'		<p class="username"><a href="show_groups.php">' . $name . '</a></p>' . PHP_EOL .
-				'		<p class="logout"><a href="logout.php">Logout</a></p>' . PHP_EOL .
+				'		<p class="logout"><a href="actions/logout.php">Logout</a></p>' . PHP_EOL .
 				'	</div>' . PHP_EOL .
 				'</div>' . PHP_EOL .
 				'	<div id="login-container">' . PHP_EOL .

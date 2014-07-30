@@ -1,5 +1,5 @@
 <?php
-	include_once "protect.php";
+	include_once "actions/protect.php";
 
 	$name = $_SESSION['username'];
 ?>
@@ -19,14 +19,14 @@
 	</div>
 	<div class="userinfo">
 		<p class="username"><a href="show_groups.php"><?php echo $name; ?></a></p>
-		<p class="logout"><a href="logout.php">Logout</a></p>
+		<p class="logout"><a href="actions/logout.php">Logout</a></p>
 	</div>
 </div>
 
 <div id="login-container">
 	<p class="title">New Group</p>
 
-	<form id="login-form" name="create-group" method="post" action="create_group_do.php">
+	<form id="login-form" name="create-group" method="post" action="actions/create_group.php">
 		<input type="text" name="group" placeholder="Group's Name" class="textBox" />
 		
 		<input type="submit" name="create" value="Create Group" class="button" />

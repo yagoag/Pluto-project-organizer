@@ -10,7 +10,7 @@
 <div id="login-container">
 	<img src="images/logo.png" />
 
-	<form id="login-form" name="login-form" method="post" action="login_do.php">
+	<form id="login-form" name="login-form" method="post" action="actions/login.php">
 		<input type="text" name="username" placeholder="Username" class="textBox" />
 		<input type="password" name="password" placeholder="Password" class="textBox" />
 		
